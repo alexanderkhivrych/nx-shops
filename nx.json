@@ -1,7 +1,8 @@
 {
-  "affected": { "defaultBase": "origin/main" },
   "cli": {
-    "warnings": { "versionMismatch": false },
+    "warnings": {
+      "versionMismatch": false
+    },
     "packageManager": "pnpm",
     "analytics": false
   },
@@ -10,9 +11,13 @@
       "unitTestRunner": "jest",
       "e2eTestRunner": "cypress"
     },
-    "@nx/angular:library": { "unitTestRunner": "jest" },
+    "@nx/angular:library": {
+      "unitTestRunner": "jest"
+    },
     "@nx/angular": {
-      "convert-tslint-to-eslint": { "removeTSLintIfNoMoreTSLintTargets": true }
+      "convert-tslint-to-eslint": {
+        "removeTSLintIfNoMoreTSLintTargets": true
+      }
     },
     "@nx/react": {
       "application": {
@@ -21,7 +26,9 @@
         "bundler": "webpack",
         "babel": true
       },
-      "component": { "style": "css" },
+      "component": {
+        "style": "css"
+      },
       "library": {
         "style": "css",
         "linter": "eslint",
@@ -41,17 +48,23 @@
       "inputs": ["default", "^production"],
       "cache": true
     },
-    "lint": {
-      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
-      "cache": true
-    },
     "@nx/jest:jest": {
       "inputs": ["default", "^production", "{workspaceRoot}/jest.preset.js"],
       "cache": true,
-      "options": { "passWithNoTests": true },
-      "configurations": { "ci": { "ci": true, "codeCoverage": true } }
+      "options": {
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
     },
-    "@nx/vite:test": { "cache": true, "inputs": ["default", "^production"] }
+    "@nx/eslint:lint": {
+      "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+      "cache": true
+    }
   },
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
@@ -69,5 +82,7 @@
     ]
   },
   "parallel": 1,
-  "nxCloudAccessToken": "YmQzMTE1MmYtNjk0Ni00NWNiLTkwNDEtNGFkZjAzNTc4ZmRlfHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "YmQzMTE1MmYtNjk0Ni00NWNiLTkwNDEtNGFkZjAzNTc4ZmRlfHJlYWQtd3JpdGU=",
+  "useInferencePlugins": false,
+  "defaultBase": "origin/main"
 }
